@@ -1,0 +1,335 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+<section class="shadow-2xl shadow-black main bg-gradient-to-r bg-zinc-800 animate-slide-in h-[122px]">
+    <div class="flex items-center justify-between py-2 pr-4">
+        <div class="flex items-center w-[30%]">
+            <img class="w-[150px] opacity-75 rounded-r-[40px] transition-transform duration-500 hover:scale-110" 
+                 src="/static/images/Screenshot 2024-12-05 120336.png" alt="">
+            <h1 class="ml-3 text-[50px] font-serif text-green-500 opacity-85 hover:text-lime-400 transition-colors duration-300">EBOOKS</h1>
+        </div>
+        <div class="w-[30%]">
+            <a href="" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Home</a>
+            <a href="{% url 'web:cart' %}" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Cart</a>
+            <a href="{% url 'web:contact' %}" class="text-stone-400 font-semibold text-[20px] transition-transform hover:scale-110 duration-300">Contact</a>
+        </div>
+        <div class="w-[10%]">
+            <div class="text-center group">
+                <i class='bx bx-map text-white text-[30px] transition-transform group-hover:rotate-12 duration-300'></i>
+                <h1 class="text-green-500 text-[10px] font-bold group-hover:text-lime-400 transition-colors duration-300">Bookshop Finder</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home h-[84vh] bg-cover bg-top opacity-unset animate-slide-in" 
+         style="background-image: url(/static/images/bg-3.webp);">
+    <div class="flex px-20">
+        <div class="w-[50%] pt-20 bg-black p-10 mt-10 rounded-2xl bg-opacity-40 shadow-2xl">
+            <h1 class="text-[60px] font-bold text-white">
+                Biggest <span class="text-green-500">"bookstore"</span><br> in India
+            </h1>
+            <p class="text-[20px] mt-5 font-semibold text-white">
+                Whether you're a fan of gripping novels, insightful biographies, <br> thrilling mysteries, or educational resources,<br> we have something for everyone.
+            </p>
+            <button class="items-center px-5 py-2 mt-10 font-bold text-white transition-colors duration-300 bg-green-600 rounded-lg hover:bg-lime-600">
+                Explore <i class='font-bold text-white bx bx-right-arrow-alt'></i>
+            </button>
+        </div>
+        <div class="relative w-[50%] flex pt-20 h-[75vh] ml-5">
+            <img class="w-[200px] h-[300px] rounded-xl shadow-2xl shadow-black absolute bottom-2 transition-transform duration-500 hover:scale-110 hover:rotate-6" 
+                 src="/static/images/solve-murder-678x1024.jpg" alt="">
+            <img class="w-[300px] h-[400px] rounded-xl shadow-2xl shadow-black absolute top-15 left-[160px] z-50 transition-transform duration-500 hover:scale-110 hover:rotate-6" 
+                 src="/static/images/300cd9b7f3e9ecbc726ffd4af5b34d16.jpg" alt="">
+            <img class="w-[250px] h-[300px] rounded-xl shadow-2xl shadow-black absolute right-[30px] top-10 transition-transform duration-500 hover:scale-110 hover:rotate-6" 
+                 src="/static/images/72178b85-1469-4463-b65c-1456f86807bf_1.8ff6cf02d7702a66e473452a304241c7.webp" alt="">
+        </div>
+    </div>
+</section>
+<section class="py-4 shadow-lg shadow-black bg-gradient-to-r bg-zinc-800">
+    <div class="">
+        <h1 class="text-center text-[50px] text-green-500 opacity-80 font-bold">Read and Grow..,</h1>
+        <p class="text-center text-gray-400 opacity-80 text-[15px] w-[60%] m-auto">Every book you read fills your brain with new information, enhancing your understanding of the world,
+            Reading trains your mind to concentrate on one task, improving productivity and mindfulness.
+        </p>
+    </div>
+</section>
+<section class="h-[80vh] bg-cover" style="background-image: url(/static/images/wood2.jpg);">
+    <div>
+        <div class="flex justify-between px-20 pt-20">
+            <!-- Card 1 -->
+            <a href="" class="animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
+                <div class="w-[40%] rounded-2xl">
+                    <img src="/static/images/card1.jpg" class="h-full rounded-l-2xl" alt="">
+                </div>
+                <div class="w-[60%] p-5 bg-zinc-600 opacity-85 rounded-r-2xl">
+                    <h1 class="text-gray-300 text-[30px] font-bold ">Top Rated Books</h1>
+                    <button class="px-5 py-2 mt-5 font-bold bg-white rounded-sm shadow-2xl">
+                        Shop now
+                    </button>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="" class=" flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
+                <div class="w-[40%] rounded-2xl">
+                    <img src="/static/images/card2.jpg" class="h-full rounded-l-2xl" alt="">
+                </div>
+                <div class="w-[60%] p-5 bg-zinc-600 opacity-85 rounded-r-2xl">
+                    <h1 class="text-gray-300 text-[30px] font-bold animate-shake">New <br> Release</h1>
+                    <button class="px-5 py-2 mt-5 font-bold bg-white rounded-sm shadow-2xl animate-shake">
+                        Shop now
+                    </button>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="" class="animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
+                <div class="w-[40%] rounded-2xl">
+                    <img src="/static/images/card3.jpg" class="h-full rounded-l-2xl" alt="">
+                </div>
+                <div class="w-[60%] p-5 bg-zinc-600 opacity-85 rounded-r-2xl">
+                    <h1 class="text-gray-300 text-[30px] font-bold">Pre <br> order</h1>
+                    <button class="px-5 py-2 mt-5 font-bold bg-white rounded-sm shadow-2xl">
+                        Shop now
+                    </button>
+                </div>
+            </a>
+        </div>
+
+        <!-- Offer Section -->
+        <div class="w-[89%] mt-20 h-[150px] wrap rounded-2xl shadow-inner shadow-black m-auto p-4 text-center bg-cover" style="background-image: url(/static/images/offerbg.jpg); opacity: 90%;">
+            <h1 class="text-white animate-shake text-[30px] m-auto rounded-2xl bg-opacity-35">More bang for your book</h1>
+            <a href="" class=" text-yellow-300  bg-opacity-35 text-[40px] bg-black px-[300px] py-2">20% off select books Click now</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Custom Tailwind-like Animation for Shaking Effect */
+    @keyframes shake {
+        0% {
+            transform: translateX(-3px);
+        }
+        50% {
+            transform: translateX(3px);
+        }
+        100% {
+            transform: translateX(-3px);
+        }
+    }
+
+    /* Adding Tailwind-style class for animation */
+    .animate-shake {
+        animation: shake 0.6s ease-in-out infinite;
+    }
+</style>
+<section class="py-4 shadow-lg shadow-black bg-gradient-to-r bg-zinc-800">
+    <div class="">
+        <h1 class="text-center text-[50px] text-green-500 opacity-80 font-bold">"Explore our products"</h1>
+        <p class="text-center text-gray-400 opacity-80 text-[15px] w-[60%] m-auto">Discover Your Next Favorite Book!
+            Explore our curated collection of top-rated books, new releases, and exclusive pre-order offers. Whether you're looking for captivating fiction, insightful non-fiction, or the latest bestsellers, we've got something for everyone.
+            Get 20% off select titles — Click now to start your literary adventure!
+        </p>
+    </div>
+</section>
+<section style="background-image: url(/static/images/bg-3.webp); background-size: contain;">
+    <div class="flex justify-between px-10  mt-15 h-fit wrap">
+        <div class="w-[20%] mt-20 bg-white bg-opacity-65 rounded-2xl shadow-lg shadow-black">
+            <div class="p-3">
+                <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="/static/images/and-then-there-were-none-1683158946044.jpeg" alt="">
+            </div>
+            <div class="p-2">
+                <h1 class="text-green-800 text-[20px] font-bold">And then there we are none</h1>
+                <p></p>
+                <h3><span class="font-bold">Price:  </span>2999</h3>
+                <button class="px-3 py-2 mt-3 mb-3 text-green-600 bg-zinc-800 rounded-xl font-bold w-full">
+                    shop now
+                </button>
+            </div>
+        </div>
+        <div class="w-[20%] mt-20 bg-white bg-opacity-65 rounded-2xl shadow-lg shadow-black">
+            <div class="p-3">
+                <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="/static/images/72178b85-1469-4463-b65c-1456f86807bf_1.8ff6cf02d7702a66e473452a304241c7.webp" alt="">
+            </div>
+            <div class="p-2">
+                <h1 class="text-green-800 text-[20px] font-bold">And then there we are none</h1>
+                <p></p>
+                <h3><span class="font-bold">Price:  </span>2999</h3>
+                <button class="px-3 py-2 mt-3 mb-3 text-green-600 bg-zinc-800 rounded-xl font-bold w-full">
+                    shop now
+                </button>
+            </div>
+        </div>
+        <div class="w-[20%] mt-20 bg-white bg-opacity-65 rounded-2xl shadow-lg shadow-black">
+            <div class="p-3">
+                <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="/static/images/91sKUE5wwOL._SL1500_.jpg" alt="">
+            </div>
+            <div class="p-2">
+                <h1 class="text-green-800 text-[20px] font-bold">And then there we are none</h1>
+                <p></p>
+                <h3><span class="font-bold">Price:  </span>2999</h3>
+                <button class="px-3 py-2 mt-3 mb-3 text-green-600 bg-zinc-800 rounded-xl font-bold w-full">
+                    shop now
+                </button>
+            </div>
+        </div>
+        <div class="w-[20%] mt-20 bg-white bg-opacity-65 rounded-2xl shadow-lg shadow-black">
+            <div class="p-3">
+                <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="/static/images/The-Blue-Umbrella-by-Ruskin-Bond.webp" alt="">
+            </div>
+            <div class="p-2">
+                <h1 class="text-green-800 text-[20px] font-bold">And then there we are none</h1>
+                <p></p>
+                <h3><span class="font-bold">Price:  </span>2999</h3>
+                <button class="px-3 py-2 mt-3 mb-3 text-green-600 bg-zinc-800 rounded-xl font-bold w-full">
+                    shop now
+                </button>
+            </div>
+        </div>
+    </div> 
+    <div class="w-full ml-[690px] py-[70px]">
+        <a class="px-10 py-3 font-bold bg-zinc-800 text-green-600   shadow-2xl rounded-[30px]" href="{% url 'web:allproduct' %}">view all</a>
+    </div>
+</section>
+
+
+<footer class="bg-gradient-to-r bg-gray-900 text-white py-10 px-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- About Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">About Us</h3>
+        <p class="text-sm text-gray-400">
+          Discover a world of books tailored for every reader. Join us in celebrating the joy of reading!
+        </p>
+      </div>
+  
+      <!-- Links Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">Quick Links</h3>
+        <ul>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Shop
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Newsletter Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">Stay Updated</h3>
+        <form class="flex flex-col">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400 mb-4 focus:outline-none focus:ring focus:ring-yellow-500"
+          />
+          <button
+            type="submit"
+            class="bg-green-600 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 transition-all duration-300"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center">
+      <!-- Social Media -->
+      <div class="flex space-x-4">
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+  
+      <!-- Copyright -->
+      <p class="text-sm text-gray-400">
+        © 2024 Your Books Website. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  
+
+
+{% endblock %}
+
+<script>
+    module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        'slide-in': {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        'slide-out': {
+          '0%': { transform: 'translateX(0)', opacity: '1' },
+          '100%': { transform: 'translateX(100%)', opacity: '0' },
+        },
+      },
+      animation: {
+        'slide-in': 'slide-in 1s ease-out',
+        'slide-out': 'slide-out 1s ease-out',
+      },
+    },
+  },
+  plugins: [],
+};
+
+</script>

@@ -1,0 +1,193 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+
+<section class="shadow-2xl shadow-black main bg-gradient-to-r bg-zinc-800 animate-slide-in h-[122px]">
+    <div class="flex items-center justify-between py-2 pr-4">
+        <div class="flex items-center w-[30%]">
+            <img class="w-[150px] opacity-75 rounded-r-[40px] transition-transform duration-500 hover:scale-110" 
+                 src="/static/images/Screenshot 2024-12-05 120336.png" alt="">
+            <h1 class="ml-3 text-[50px] font-serif text-green-500 opacity-85 hover:text-lime-400 transition-colors duration-300">EBOOKS</h1>
+        </div>
+        <div class="w-[30%]">
+            <a href="" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Home</a>
+            <a href="{% url 'web:cart' %}" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Cart</a>
+            <a href="" class="text-stone-400 font-semibold text-[20px] transition-transform hover:scale-110 duration-300">Contact</a>
+        </div>
+        <div class="w-[10%]">
+            <div class="text-center group">
+                <i class='bx bx-map text-white text-[30px] transition-transform group-hover:rotate-12 duration-300'></i>
+                <h1 class="text-green-500 text-[10px] font-bold group-hover:text-lime-400 transition-colors duration-300">Bookshop Finder</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="w-full py-10 h-[84vh]" style="background-image: url(/static/images/lastwood.png); background-size: contain;" >
+    <div class="max-w-6xl p-5 mx-auto mt-10 rounded-2xl" style="background-image: url(/static/images/bg-3.webp); background-size: cover;">
+        <!-- Product Section -->
+    
+        <div class="flex flex-col bg-white bg-opacity-60 rounded-lg md:flex-row h-[400px] shadow-2xl shadow-black ">
+            
+            <!-- Product Image -->
+            <div class="w-full md:w-1/2">
+                <img src="{{ products.image.url }}" alt="Product Image" class="w-full h-full rounded-l-lg ">
+            </div>
+            
+            <!-- Product Details -->
+            <div class="w-full p-8 md:w-1/2 ">
+                <!-- Product Title -->
+                <h1 class="text-3xl font-bold text-gray-800">{{products.title}}</h1>
+                
+                <!-- Author -->
+                <p class="mt-2 text-lg text-gray-600 "><span class="font-bold">Autor: </span>{{products.title}}</p>
+    
+                <!-- Rating -->
+                <div class="flex items-center mt-4">
+                    <div class="flex">
+                        <svg class="w-5 h-5 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 .587l3.668 7.432 8.2 1.193-5.934 5.784 1.402 8.17-7.336-3.858-7.336 3.858 1.402-8.17-5.934-5.784 8.2-1.193z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 .587l3.668 7.432 8.2 1.193-5.934 5.784 1.402 8.17-7.336-3.858-7.336 3.858 1.402-8.17-5.934-5.784 8.2-1.193z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 .587l3.668 7.432 8.2 1.193-5.934 5.784 1.402 8.17-7.336-3.858-7.336 3.858 1.402-8.17-5.934-5.784 8.2-1.193z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 .587l3.668 7.432 8.2 1.193-5.934 5.784 1.402 8.17-7.336-3.858-7.336 3.858 1.402-8.17-5.934-5.784 8.2-1.193z" />
+                        </svg>
+                        <svg class="w-5 h-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 .587l3.668 7.432 8.2 1.193-5.934 5.784 1.402 8.17-7.336-3.858-7.336 3.858 1.402-8.17-5.934-5.784 8.2-1.193z" />
+                        </svg>
+                    </div>
+                    <span class="ml-2 text-gray-600">(4.2 / 5)</span>
+                </div>
+    
+                <!-- Price -->
+                <p class="mt-4 text-2xl font-bold text-green-600">₹{{products.price}}</p>
+    
+                <!-- Description -->
+                <p class="mt-4 text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa esse illum quia fuga perspiciatis dolores vero, sint architecto ipsam sed non veniam neque iste aliquid, repellat modi quos. Consequuntur, nam.
+    
+                <!-- Add to Cart Button -->
+                <button class="w-full px-4 py-2 mt-6 font-bold text-white transition duration-300 bg-green-500 rounded-lg hover:bg-green-600">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    
+    </div>
+</section>
+<footer class="bg-gradient-to-r bg-gray-900 text-white py-10 px-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- About Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">About Us</h3>
+        <p class="text-sm text-gray-400">
+          Discover a world of books tailored for every reader. Join us in celebrating the joy of reading!
+        </p>
+      </div>
+  
+      <!-- Links Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">Quick Links</h3>
+        <ul>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Shop
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Newsletter Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">Stay Updated</h3>
+        <form class="flex flex-col">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400 mb-4 focus:outline-none focus:ring focus:ring-yellow-500"
+          />
+          <button
+            type="submit"
+            class="bg-green-600 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 transition-all duration-300"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center">
+      <!-- Social Media -->
+      <div class="flex space-x-4">
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+  
+      <!-- Copyright -->
+      <p class="text-sm text-gray-400">
+        © 2024 Your Books Website. All rights reserved.
+      </p>
+    </div>
+  </footer>
+ 
+{% endblock %}

@@ -1,0 +1,203 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+
+<section class="shadow-2xl shadow-black main bg-gradient-to-r bg-zinc-800 animate-slide-in h-[122px]">
+    <div class="flex items-center justify-between py-2 pr-4">
+        <div class="flex items-center w-[30%]">
+            <img class="w-[150px] opacity-75 rounded-r-[40px] transition-transform duration-500 hover:scale-110" 
+                 src="/static/images/Screenshot 2024-12-05 120336.png" alt="">
+            <h1 class="ml-3 text-[30px] font-serif text-green-500 opacity-85 hover:text-lime-400 transition-colors duration-300">SHOPPING-CART</h1>
+        </div>
+        <div class="w-[30%]">
+            <a href="" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Home</a>
+            <a href="{% url 'web:cart' %}" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Cart</a>
+            <a href="" class="text-stone-400 font-semibold text-[20px] transition-transform hover:scale-110 duration-300">Contact</a>
+        </div>
+        <div class="w-[10%]">
+            <div class="text-center group">
+                <i class='bx bx-map text-white text-[30px] transition-transform group-hover:rotate-12 duration-300'></i>
+                <h1 class="text-green-500 text-[10px] font-bold group-hover:text-lime-400 transition-colors duration-300">Bookshop Finder</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="bg-green-100 h-auto px-[100px] pt-[70px] pb-[70px]">
+    <div class="container mx-auto">
+       
+      <!-- Cart Items -->
+      <div class="bg-gray-100 shadow-md rounded-lg p-6">
+        <div class="flex flex-col space-y-6">
+          <!-- Single Cart Item -->
+          <div class="flex items-center justify-between border-b pb-6">
+            <!-- Item Info -->
+            <div class="flex items-center space-x-4">
+              <img 
+                src="https://via.placeholder.com/100" 
+                alt="Product Image" 
+                class="w-20 h-20 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+              />
+              <div>
+                <h2 class="text-lg font-medium">Book Title</h2>
+                <p class="text-sm text-gray-500">Author: John Doe</p>
+              </div>
+            </div>
+            
+            <!-- Quantity and Price -->
+            <div class="flex items-center space-x-6">
+              <div>
+                <label class="block text-sm text-gray-700">Quantity</label>
+                <select 
+                  class="border rounded px-3 py-1 focus:ring-2 focus:ring-yellow-500 transition duration-300"
+                >
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                </select>
+              </div>
+              <p class="text-lg font-semibold">$19.99</p>
+            </div>
+            
+            <!-- Remove Button -->
+            <button 
+              class="text-red-500 hover:text-red-700 transition-colors duration-300"
+            >
+              <i class="fas fa-trash"></i> Remove
+            </button>
+          </div>
+  
+          <!-- Additional Cart Items can be repeated here -->
+        </div>
+  
+        <!-- Total and Checkout -->
+        <div class="mt-8 flex flex-col sm:flex-row sm:justify-between items-center">
+          <!-- Total -->
+          <div class="mb-4 sm:mb-0">
+            <h3 class="text-lg font-semibold">Total: <span class="text-green-500">$39.98</span></h3>
+          </div>
+  
+          <!-- Checkout Button -->
+          <button 
+            class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition-all duration-300"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-gradient-to-r bg-gray-900 text-white py-10 px-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- About Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">About Us</h3>
+        <p class="text-sm text-gray-400">
+          Discover a world of books tailored for every reader. Join us in celebrating the joy of reading!
+        </p>
+      </div>
+  
+      <!-- Links Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">Quick Links</h3>
+        <ul>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Shop
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Newsletter Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">Stay Updated</h3>
+        <form class="flex flex-col">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400 mb-4 focus:outline-none focus:ring focus:ring-yellow-500"
+          />
+          <button
+            type="submit"
+            class="bg-green-600 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 transition-all duration-300"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center">
+      <!-- Social Media -->
+      <div class="flex space-x-4">
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+  
+      <!-- Copyright -->
+      <p class="text-sm text-gray-400">
+        © 2024 Your Books Website. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  
+
+
+{% endblock %}
