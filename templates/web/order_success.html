@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+
+
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-100 to-yellow-200 p-6">
+    <div class="bg-white p-10 rounded-lg shadow-xl max-w-lg w-full transform transition-transform duration-1000 ease-in-out scale-95 hover:scale-100">
+        <div class="flex justify-center items-center mb-6">
+            <!-- Tick Animation -->
+            <svg class="w-16 h-16 text-green-500 animate__animated animate__fadeIn animate__delay-1s" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path class="tick-path" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+        
+        <h2 class="text-3xl font-semibold text-green-600 mb-4 animate__animated animate__fadeIn animate__delay-2s">Order Success</h2>
+        <p class="text-lg text-gray-800 mb-4 animate__animated animate__fadeIn animate__delay-3s">Thank you for your order! Your order ID is <span class="font-semibold text-green-600">{{ order.id }}</span>.</p>
+        <p class="text-lg text-gray-800 mb-4 animate__animated animate__fadeIn animate__delay-4s">Total Amount: <span class="font-semibold text-green-600">₹{{ order.total_price }}</span></p>
+        <p class="text-lg text-gray-800 mb-4 animate__animated animate__fadeIn animate__delay-5s">Status: <span class="font-semibold text-green-600">{{ order.status }}</span></p>
+        
+        <!-- Optional: Add a button to redirect to the homepage or other page -->
+        <div class="text-center mt-6">
+            <a href="{% url 'web:index' %}" class="inline-block bg-green-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-green-600 transition duration-300">Go to Home</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes tickAnimation {
+    0% { stroke-dasharray: 0, 100; }
+    100% { stroke-dasharray: 100, 0; }
+}
+
+.tick-path {
+    stroke-dasharray: 0, 100;
+    stroke-dashoffset: 0;
+    animation: tickAnimation 1s ease forwards;
+}
+</style>
+
+
+{% endblock %}

@@ -26,69 +26,70 @@
     </div>
 </section>
 <div class="bg-green-100 h-auto px-[100px] pt-[70px] pb-[70px]">
-    <div class="container mx-auto">
-       
+  <div class="container mx-auto">
       <!-- Cart Items -->
       <div class="bg-gray-100 shadow-md rounded-lg p-6">
-        <div class="flex flex-col space-y-6">
-          <!-- Single Cart Item -->
-          <div class="flex items-center justify-between border-b pb-6">
-            <!-- Item Info -->
-            <div class="flex items-center space-x-4">
-              <img 
-                src="https://via.placeholder.com/100" 
-                alt="Product Image" 
-                class="w-20 h-20 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-              />
-              <div>
-                <h2 class="text-lg font-medium">Book Title</h2>
-                <p class="text-sm text-gray-500">Author: John Doe</p>
+          <div class="flex flex-col space-y-6">
+              {% for item in cart_items %}
+              <!-- Single Cart Item -->
+              <div class="flex items-center justify-between border-b pb-6">
+                  <!-- Item Info -->
+                  <div class="flex items-center space-x-4">
+                      <img 
+                          src="{{ item.product.image.url }}" 
+                          alt="{{ item.product.title }}" 
+                          class="w-20 h-20 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                      />
+                      <div>
+                          <h2 class="text-lg font-medium text-green-500">{{ item.product.title }}</h2>
+                          <p class="text-sm text-gray-500">Author: {{ item.product.author }}</p>
+                      </div>
+                  </div>
+                  
+                  <!-- Quantity and Price -->
+                  <div class="flex items-center space-x-6">
+                      <div>
+                          {% csrf_token %}
+                          <div>
+                              <label class="block text-sm text-gray-700">Quantity</label>
+                              <input 
+                                  type="number" 
+                                  name="quantity" 
+                                  value="{{ item.quantity }}" 
+                                  min="1" 
+                                  class="border rounded px-3 py-1 w-16 text-center"
+                              >
+                          </div>
+                      </div>
+                      <p class="text-lg font-semibold text-green-500">₹{{ item.price }}</p>
+                  </div>
+                  
+                  <a href="{% url 'web:remove_cart_item' item.id %}" 
+                      class="text-red-500 hover:text-red-700 transition-colors duration-300"
+                  >
+                      <i class="fas fa-trash"></i> Remove
+                  </a>
               </div>
-            </div>
-            
-            <!-- Quantity and Price -->
-            <div class="flex items-center space-x-6">
-              <div>
-                <label class="block text-sm text-gray-700">Quantity</label>
-                <select 
-                  class="border rounded px-3 py-1 focus:ring-2 focus:ring-yellow-500 transition duration-300"
-                >
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                </select>
+              {% endfor %}
+          </div>
+
+          <!-- Total and Checkout -->
+          <div class="mt-8 flex flex-col sm:flex-row sm:justify-between items-center">
+              <!-- Total -->
+              <div class="mb-4 sm:mb-0">
+                  <h3 class="text-lg font-semibold">Total: <span class="text-green-500">₹{{ total_price }}</span></h3>
               </div>
-              <p class="text-lg font-semibold">$19.99</p>
-            </div>
-            
-            <!-- Remove Button -->
-            <button 
-              class="text-red-500 hover:text-red-700 transition-colors duration-300"
-            >
-              <i class="fas fa-trash"></i> Remove
-            </button>
+
+              <!-- Checkout Button -->
+              <a href="{% url 'web:chekout' %}" 
+                  class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition-all duration-300"
+              >
+                  Proceed to Checkout
+              </a>
           </div>
-  
-          <!-- Additional Cart Items can be repeated here -->
-        </div>
-  
-        <!-- Total and Checkout -->
-        <div class="mt-8 flex flex-col sm:flex-row sm:justify-between items-center">
-          <!-- Total -->
-          <div class="mb-4 sm:mb-0">
-            <h3 class="text-lg font-semibold">Total: <span class="text-green-500">$39.98</span></h3>
-          </div>
-  
-          <!-- Checkout Button -->
-          <button 
-            class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600 transition-all duration-300"
-          >
-            Proceed to Checkout
-          </button>
-        </div>
       </div>
-    </div>
   </div>
+</div>
 
   <footer class="bg-gradient-to-r bg-gray-900 text-white py-10 px-10">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
