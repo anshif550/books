@@ -1,20 +1,20 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404 ,reverse
+from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from Store.models import *
-import stripe
-from django.conf import settings
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.http import HttpResponseRedirect
+from users.models import User
+from customer.models import*
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
 
-
+@login_required(login_url='/login/')
 def index(request):
-    """Homepage view displaying categories, authors, books, and products."""
     categories = Category.objects.all()
     authors = Author.objects.all()
     books = Book.objects.all()
-    products = Product.objects.all()
+    products = Product.objects.all()[:4]
 
     context = {
         'author': authors,
@@ -26,6 +26,7 @@ def index(request):
     return render(request, "web/index.html", context=context)
 
 
+@login_required(login_url='/login/')
 def allproduct(request):
     """View displaying all products and authors."""
     products = Product.objects.all()
@@ -39,6 +40,7 @@ def allproduct(request):
     return render(request, "web/allproduct.html", context=context)
 
 
+@login_required(login_url='/login/')
 def singlebook(request, id):
 
     products = get_object_or_404(Product, id=id) 
@@ -50,7 +52,8 @@ def singlebook(request, id):
     return render(request, "web/singlebook.html", context=context)
 
 
-@login_required
+
+@login_required(login_url='/login/')
 def cart(request):
 
     customer = get_object_or_404(Customer, user=request.user)
@@ -65,6 +68,7 @@ def cart(request):
     return render(request, 'web/cart.html', context=context)
 
 
+@login_required(login_url='/login/')
 def contact(request):
 
     if request.method == "POST":
@@ -84,13 +88,7 @@ def contact(request):
 
     return render(request, "web/contact.html")
 
-
-
-
-
-
-
-@login_required
+@login_required(login_url='/login/')
 def add_cart(request, id):
     user = request.user
     # Ensure the Customer object exists for the logged-in user
@@ -140,7 +138,7 @@ def update_cart_quantity(request, id):
 
     return redirect('web:cart')
 
-@login_required
+@login_required(login_url='/login/')
 def chekout(request):
     # Get the logged-in user
     user = request.user
@@ -193,6 +191,135 @@ def order_success(request, order_id):
     return render(request, 'web/order_success.html', context)
 
 
+def logout(request):
+    auth_logout(request)
+    return HttpResponseRedirect(reverse('web:login'))
+
+def login(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        user = authenticate(request, email=email, password=password)
+
+        if user is not None:
+            auth_login(request, user)
+            return HttpResponseRedirect(reverse('web:index'))
+        else:
+            context = {
+                'error': True,
+                'message' : 'invalid Email or password'
+            }
+            return render(request, 'web/login.html', context)
+    else:
+        return render(request, 'web/login.html')
+
+def register(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        password = request.POST.get('password') 
+
+        if User.objects.filter(email=email).exists():
+            context = {
+                'error': True,
+                'message' : 'Email already exists'
+            }
+            return render(request, 'web/register.html', context=context)
+            
+        else:
+            user = User.objects.create_user(
+                first_name=first_name,
+                last_name=last_name,
+                email=email,
+                password=password,
+                is_customer=True
+            )
+            user.save()
+            customer = Customer.objects.create(
+                user=user
+            )
+            customer.save()
+            return HttpResponseRedirect(reverse('web:login'))
+    else:
+        return render(request, 'web/register.html') 
+    
+def categories(request, category_id=None):
+    # Fetch all categories
+    categories = Category.objects.all()
+
+    # Fetch products filtered by category (if provided), otherwise fetch all
+    if category_id:
+        products = Product.objects.filter(category_id=category_id)
+    else:
+        products = Product.objects.all()
+
+    # Prepare the context for rendering
+    context = {
+        'categories': categories,
+        'products': products,
+    }
+
+    return render(request, 'web/categories.html', context=context)
+
+def newrelease(request, category_id=None):
+    # Fetch all categories
+    categories = Category.objects.all()
+
+    # Fetch products filtered by category (if provided), otherwise fetch all
+    if category_id:
+        products = Product.objects.filter(category_id=category_id)
+    else:
+        products = Product.objects.all()
+
+    # Prepare the context for rendering
+    context = {
+        'categories': categories,
+        'products': products,
+    }
+
+    return render(request, 'web/newrelease.html', context=context)
+
+def preorder(request, category_id=None):
+    # Fetch all categories
+    categories = Category.objects.all()
+
+    # Fetch products filtered by category (if provided), otherwise fetch all
+    if category_id:
+        products = Product.objects.filter(category_id=category_id)
+    else:
+        products = Product.objects.all()
+
+    # Prepare the context for rendering
+    context = {
+        'categories': categories,
+        'products': products,
+    }
+
+    return render(request, 'web/preorder.html', context=context)
+
+def ofered(request, category_id=None):
+    # Fetch all categories
+    categories = Category.objects.all()
+
+    # Fetch products filtered by category (if provided), otherwise fetch all
+    if category_id:
+        products = Product.objects.filter(category_id=category_id)
+    else:
+        products = Product.objects.all()
+
+    # Prepare the context for rendering
+    context = {
+        'categories': categories,
+        'products': products,
+    }
+
+    return render(request, 'web/ofered.html', context=context)
 
 
+@login_required(login_url='/login/')
+def explore(request):
 
+
+    return render(request, "web/explore.html")

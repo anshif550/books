@@ -8,7 +8,7 @@
     <div class="flex items-center justify-between py-2 pr-4">
         <div class="flex items-center w-[30%]">
             <img class="w-[150px] opacity-75 rounded-r-[40px] transition-transform duration-500 hover:scale-110" 
-                 src="/static/images/Screenshot 2024-12-05 120336.png" alt="">
+                 src="/static/web/images/Screenshot 2024-12-05 120336.png" alt="">
             <h1 class="ml-3 text-[50px] font-serif text-green-500 opacity-85 hover:text-lime-400 transition-colors duration-300">EBOOKS</h1>
         </div>
         <div class="w-[30%]">
@@ -26,7 +26,7 @@
 </section>
 
 <section class="home h-[84vh] bg-cover bg-top opacity-unset animate-slide-in" 
-         style="background-image: url(/static/images/bg-3.webp);">
+         style="background-image: url(/static/web/images/bg-3.webp); background-size: contain;">
     <div class="flex px-20">
         <div class="w-[50%] pt-20 bg-black p-10 mt-10 rounded-2xl bg-opacity-40 shadow-2xl">
             <h1 class="text-[60px] font-bold text-white">
@@ -35,17 +35,17 @@
             <p class="text-[20px] mt-5 font-semibold text-white">
                 Whether you're a fan of gripping novels, insightful biographies, <br> thrilling mysteries, or educational resources,<br> we have something for everyone.
             </p>
-            <button class="items-center px-5 py-2 mt-10 font-bold text-white transition-colors duration-300 bg-green-600 rounded-lg hover:bg-lime-600">
+            <a href="{% url 'web:explore' %}" class="block w-[140px] items-center px-3 py-2 text-center mt-10 font-bold text-white transition-colors duration-300 bg-green-600 rounded-lg hover:bg-lime-600">
                 Explore <i class='font-bold text-white bx bx-right-arrow-alt'></i>
-            </button>
+            </a>
         </div>
         <div class="relative w-[50%] flex pt-20 h-[75vh] ml-5">
             <img class="w-[200px] h-[300px] rounded-xl shadow-2xl shadow-black absolute bottom-2 transition-transform duration-500 hover:scale-110 hover:rotate-6" 
-                 src="/static/images/solve-murder-678x1024.jpg" alt="">
+                 src="/static/web/images/solve-murder-678x1024.jpg" alt="">
             <img class="w-[300px] h-[400px] rounded-xl shadow-2xl shadow-black absolute top-15 left-[160px] z-50 transition-transform duration-500 hover:scale-110 hover:rotate-6" 
-                 src="/static/images/300cd9b7f3e9ecbc726ffd4af5b34d16.jpg" alt="">
+                 src="/static/web/images/300cd9b7f3e9ecbc726ffd4af5b34d16.jpg" alt="">
             <img class="w-[250px] h-[300px] rounded-xl shadow-2xl shadow-black absolute right-[30px] top-10 transition-transform duration-500 hover:scale-110 hover:rotate-6" 
-                 src="/static/images/72178b85-1469-4463-b65c-1456f86807bf_1.8ff6cf02d7702a66e473452a304241c7.webp" alt="">
+                 src="/static/web/images/72178b85-1469-4463-b65c-1456f86807bf_1.8ff6cf02d7702a66e473452a304241c7.webp" alt="">
         </div>
     </div>
 </section>
@@ -57,53 +57,53 @@
         </p>
     </div>
 </section>
-<section class="h-[80vh] bg-cover" style="background-image: url(/static/images/wood2.jpg);">
+<section class="h-[80vh] bg-cover" style="background-image: url(/static/web/images/wood2.jpg);">
     <div>
         <div class="flex justify-between px-20 pt-20">
             <!-- Card 1 -->
-            <a href="" class="animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
+            <div class=" mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
                 <div class="w-[40%] rounded-2xl">
-                    <img src="/static/images/card1.jpg" class="h-full rounded-l-2xl" alt="">
+                    <img src="/static/web/images/card1.jpg" class="h-full rounded-l-2xl" alt="">
                 </div>
                 <div class="w-[60%] p-5 bg-zinc-600 opacity-85 rounded-r-2xl">
                     <h1 class="text-gray-300 text-[30px] font-bold ">Top Rated Books</h1>
-                    <button class="px-5 py-2 mt-5 font-bold bg-white rounded-sm shadow-2xl">
+                    <a href="{% url 'web:categories' %}" class="block px-5 py-2 mt-10 font-bold bg-white rounded-sm shadow-2xl w-[120px]">
                         Shop now
-                    </button>
+                    </a> 
                 </div>
-            </a>
+            </div>
 
             <!-- Card 2 -->
-            <a href="" class=" flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
+            <div class="mb-5 flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
                 <div class="w-[40%] rounded-2xl">
-                    <img src="/static/images/card2.jpg" class="h-full rounded-l-2xl" alt="">
+                    <img src="/static/web/images/card2.jpg" class="h-full rounded-l-2xl" alt="">
                 </div>
                 <div class="w-[60%] p-5 bg-zinc-600 opacity-85 rounded-r-2xl">
                     <h1 class="text-gray-300 text-[30px] font-bold animate-shake">New <br> Release</h1>
-                    <button class="px-5 py-2 mt-5 font-bold bg-white rounded-sm shadow-2xl animate-shake">
-                        Shop now
-                    </button>
+                    <a href="{% url 'web:newrelease' %}" class="block px-5 py-2 mt-10 font-bold bg-white rounded-sm shadow-2xl w-[120px]">
+                      Shop now
+                    </a> 
                 </div>
-            </a>
+            </div>
 
             <!-- Card 3 -->
-            <a href="" class="animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
+            <div class="mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
                 <div class="w-[40%] rounded-2xl">
-                    <img src="/static/images/card3.jpg" class="h-full rounded-l-2xl" alt="">
+                    <img src="/static/web/images/card3.jpg" class="h-full rounded-l-2xl" alt="">
                 </div>
                 <div class="w-[60%] p-5 bg-zinc-600 opacity-85 rounded-r-2xl">
                     <h1 class="text-gray-300 text-[30px] font-bold">Pre <br> order</h1>
-                    <button class="px-5 py-2 mt-5 font-bold bg-white rounded-sm shadow-2xl">
-                        Shop now
-                    </button>
+                    <a href="{% url 'web:preorder' %}" class="block px-5 py-2 mt-10 font-bold bg-white rounded-sm shadow-2xl w-[120px]">
+                      Shop now
+                    </a> 
                 </div>
-            </a>
+            </div>
         </div>
 
         <!-- Offer Section -->
-        <div class="w-[89%] mt-20 h-[150px] wrap rounded-2xl shadow-inner shadow-black m-auto p-4 text-center bg-cover" style="background-image: url(/static/images/offerbg.jpg); opacity: 90%;">
-            <h1 class="text-white animate-shake text-[30px] m-auto rounded-2xl bg-opacity-35">More bang for your book</h1>
-            <a href="" class=" text-yellow-300  bg-opacity-35 text-[40px] bg-black px-[300px] py-2">20% off select books Click now</a>
+        <div class="w-[89%] mt-20 h-[150px] wrap rounded-2xl shadow-inner shadow-black m-auto p-4 text-center bg-cover" style="background-image: url(/static/web/images/offerbg.jpg); opacity: 90%;">
+            <h1 class="text-white animate-shake text-[30px] m-auto rounded-2xl bg-opacity-35 pb-3">More bang for your book</h1>
+            <a href="{% url 'web:ofered' %}" class=" text-yellow-300  bg-opacity-35 text-[40px] bg-black px-[300px] py-2">20% off select books Click now</a>
         </div>
     </div>
 </section>
@@ -136,60 +136,24 @@
         </p>
     </div>
 </section>
-<section style="background-image: url(/static/images/bg-3.webp); background-size: contain;">
-    <div class="flex justify-between px-10  mt-15 h-fit wrap">
-        <div class="w-[20%] mt-20 bg-white bg-opacity-65 rounded-2xl shadow-lg shadow-black">
-            <div class="p-3">
-                <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="/static/images/and-then-there-were-none-1683158946044.jpeg" alt="">
-            </div>
-            <div class="p-2">
-                <h1 class="text-green-800 text-[20px] font-bold">And then there we are none</h1>
-                <p></p>
-                <h3><span class="font-bold">Price:  </span>2999</h3>
-                <button class="px-3 py-2 mt-3 mb-3 text-green-600 bg-zinc-800 rounded-xl font-bold w-full">
-                    shop now
-                </button>
-            </div>
+<section style="background-image: url(/static/web/images/bg-3.webp); background-size: contain;">
+  <div class="flex flex-wrap justify-between px-10 mb-10 mt-15 h-fit">
+    {% for products in products %}
+    <div class="w-[22%] mt-20 bg-stone-50 bg-opacity-55 rounded-2xl shadow-lg shadow-black">
+        <div class="p-3">
+            <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="{{ products.image.url }}" alt="">
         </div>
-        <div class="w-[20%] mt-20 bg-white bg-opacity-65 rounded-2xl shadow-lg shadow-black">
-            <div class="p-3">
-                <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="/static/images/72178b85-1469-4463-b65c-1456f86807bf_1.8ff6cf02d7702a66e473452a304241c7.webp" alt="">
-            </div>
-            <div class="p-2">
-                <h1 class="text-green-800 text-[20px] font-bold">And then there we are none</h1>
-                <p></p>
-                <h3><span class="font-bold">Price:  </span>2999</h3>
-                <button class="px-3 py-2 mt-3 mb-3 text-green-600 bg-zinc-800 rounded-xl font-bold w-full">
-                    shop now
-                </button>
-            </div>
+        <div class="p-2">
+            <h1 class="text-green-800 text-[20px] font-bold">{{products.title}}</h1>
+            <p></p>               
+            <h3><span class="font-bold">Price:{{products.price}}</span></h3>
+            <a href="{% url 'web:singlebook' id=products.id %}" class="block px-3 py-2 mt-3 mb-3 text-center bg-zinc-700 text-green-500 rounded-xl">
+                shop now
+            </a>
         </div>
-        <div class="w-[20%] mt-20 bg-white bg-opacity-65 rounded-2xl shadow-lg shadow-black">
-            <div class="p-3">
-                <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="/static/images/91sKUE5wwOL._SL1500_.jpg" alt="">
-            </div>
-            <div class="p-2">
-                <h1 class="text-green-800 text-[20px] font-bold">And then there we are none</h1>
-                <p></p>
-                <h3><span class="font-bold">Price:  </span>2999</h3>
-                <button class="px-3 py-2 mt-3 mb-3 text-green-600 bg-zinc-800 rounded-xl font-bold w-full">
-                    shop now
-                </button>
-            </div>
-        </div>
-        <div class="w-[20%] mt-20 bg-white bg-opacity-65 rounded-2xl shadow-lg shadow-black">
-            <div class="p-3">
-                <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="/static/images/The-Blue-Umbrella-by-Ruskin-Bond.webp" alt="">
-            </div>
-            <div class="p-2">
-                <h1 class="text-green-800 text-[20px] font-bold">And then there we are none</h1>
-                <p></p>
-                <h3><span class="font-bold">Price:  </span>2999</h3>
-                <button class="px-3 py-2 mt-3 mb-3 text-green-600 bg-zinc-800 rounded-xl font-bold w-full">
-                    shop now
-                </button>
-            </div>
-        </div>
+    </div>
+    {% endfor %}      
+</div>
     </div> 
     <div class="w-full ml-[690px] py-[70px]">
         <a class="px-10 py-3 font-bold bg-zinc-800 text-green-600   shadow-2xl rounded-[30px]" href="{% url 'web:allproduct' %}">view all</a>
@@ -197,7 +161,7 @@
 </section>
 
 
-<footer class="bg-gradient-to-r bg-gray-900 text-white py-10 px-10">
+<footer class="bg-gradient-to-r bg-zinc-800 text-white py-10 px-10">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- About Section -->
       <div>

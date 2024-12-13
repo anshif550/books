@@ -9,7 +9,7 @@
     <div class="flex items-center justify-between py-2 pr-4">
         <div class="flex items-center w-[30%]">
             <img class="w-[150px] opacity-75 rounded-r-[40px] transition-transform duration-500 hover:scale-110" 
-                 src="/static/images/Screenshot 2024-12-05 120336.png" alt="">
+                 src="/static/web/images/Screenshot 2024-12-05 120336.png" alt="">
             <h1 class="ml-3 text-[50px] font-serif text-green-500 opacity-85 hover:text-lime-400 transition-colors duration-300">EBOOKS</h1>
         </div>
         <div class="w-[30%]">
@@ -26,10 +26,10 @@
     </div>
 </section>
 
-<section class="w-full py-10 h-[84vh]" style="background-image: url(/static/images/lastwood.png); background-size: contain;">
-  <div class="max-w-6xl p-5 mx-auto mt-10 rounded-2xl" style="background-image: url(/static/images/bg-3.webp); background-size: cover;">
+<section class="w-full py-10 h-[84vh]" style="background-image: url(/static/web/images/lastwood.png); background-size: contain;">
+  <div class="max-w-6xl p-5 mx-auto mt-10 rounded-2xl" style="background-image: url(/static/web/images/bg-3.webp); background-size: cover;">
       <!-- Product Section -->
-      <div class="flex flex-col bg-white bg-opacity-60 rounded-lg md:flex-row h-[400px] shadow-2xl shadow-black">
+      <div class="flex flex-col bg-stone-50 bg-opacity-60 rounded-lg md:flex-row h-[400px] shadow-2xl shadow-black">
           <!-- Product Image -->
           <div class="w-full md:w-1/2">
               <img src="{{ products.image.url }}" alt="Product Image" class="w-full h-full rounded-l-lg">
@@ -46,7 +46,7 @@
               </div>
               <p class="mt-4 text-2xl font-bold text-green-600">₹{{ products.price }}</p>
               <p class="mt-4 text-gray-600">
-                  {{ products.description }}
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eius repudiandae fugiat pariatur itaque veniam, nobis, magni rerum similique totam cupiditate? Enim officiis delectus in.
               </p>
               <!-- Add to Cart Button -->
               <a href="{% url 'web:add_cart' products.id %}">

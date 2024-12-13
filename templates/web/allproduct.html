@@ -9,7 +9,7 @@
     <div class="flex items-center justify-between py-2 pr-4">
         <div class="flex items-center w-[30%]">
             <img class="w-[150px] opacity-75 rounded-r-[40px] transition-transform duration-500 hover:scale-110" 
-                 src="/static/images/Screenshot 2024-12-05 120336.png" alt="">
+                 src="/static/web/images/Screenshot 2024-12-05 120336.png" alt="">
             <h1 class="ml-3 text-[50px] font-serif text-green-500 opacity-85 hover:text-lime-400 transition-colors duration-300">EBOOKS</h1>
         </div>
         <div class="w-[30%]">
@@ -25,10 +25,10 @@
         </div>
     </div>
 </section>
-<section class="pb-20 " style="background-image: url(/static/images/bg-3.webp); background-size: contain;">
+<section class="pb-20 " style="background-image: url(/static/web/images/bg-3.webp); background-size: contain;">
     <div class="flex flex-wrap justify-between px-10 mb-10 mt-15 h-fit">
         {% for products in products %}
-        <div class="w-[22%] mt-20 bg-white bg-opacity-75 rounded-2xl shadow-lg shadow-black">
+        <div class="w-[22%] mt-20 bg-stone-50 bg-opacity-55 rounded-2xl shadow-lg shadow-black">
             <div class="p-3">
                 <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="{{ products.image.url }}" alt="">
             </div>

@@ -1,0 +1,80 @@
+{% extends 'base/manager_base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+
+
+
+{% include 'include/manager-nav.html' %}
+
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="mx-0 row page-titles">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Store Category List</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered zero-configuration">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>NAME</th>
+                                                <th>EDIT</th>
+                                                <th>DELETE</th>
+                                            </tr>
+                                        </thead>
+                                    <tbody>
+                                        {% for instance in instances %}
+                                        <tr>
+                                            <td>{{instance.id}}</td>
+                                            <td>{{instance.name}}</td>
+                                            <td><a href=""><button type="button" class="mb-1 btn btn-primary">Edit</button></a></td>
+                                            <td><a href="{% url 'manager:category_delete' id=instance.id %}{% url 'manager:category_delete' id=instance.id %}"><button type="button" class="mb-1 btn btn-danger" >Delete</button></a></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>    
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% load static %} 
+<div class="nav-header" style="background: rgb(218, 214, 214);   border-end-end-radius: 100px; border-bottom-left-radius: 100px;">
+    <div class="" style="padding-left: 50px; padding-top: 13px; background: white;">
+        <a href="{% url 'manager:index' %}" >
+            <b class="logo-abbr"><img src="{% static 'images/logo.png' %}" alt=""> </b>
+            <span class="logo-compact"><img src="{% static './images/logo-compact.png' %}" alt=""></span>
+            <span class="brand-title" >
+                <img src="{% static 'web./images/logo.png' %}" alt="" style="width: 120px; margin-bottom: 0px;">
+            </span>
+        </a>
+    </div>
+</div>
+
+<!--**********************************
+    Nav header end
+***********************************-->
+
+<!--**********************************
+    Header start
+***********************************-->
+
+<!--**********************************
+    Header end ti-comment-alt
+***********************************-->
+
+<!--**********************************
+    Sidebar start
+***********************************-->
+
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./index.html">Home 1</a></li>
+                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Categories</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'manager:category_add' %}">Add Now</a></li>
+                            <li><a href="{% url 'manager:categories' %}">List</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Products</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'manager:products_add' %}">Add Now</a></li>
+                            <li><a href="{% url 'manager:products' %}">List</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        

@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+<section class="shadow-2xl shadow-black main bg-gradient-to-r bg-zinc-800 animate-slide-in h-[122px]">
+    <div class="flex items-center justify-between py-2 pr-4">
+        <div class="flex items-center w-[30%]">
+            <img class="w-[150px] opacity-75 rounded-r-[40px] transition-transform duration-500 hover:scale-110" 
+                 src="/static/web/images/Screenshot 2024-12-05 120336.png" alt="">
+            <h1 class="ml-3 text-[50px] font-serif text-green-500 opacity-85 hover:text-lime-400 transition-colors duration-300">EBOOKS</h1>
+        </div>
+        <div class="w-[30%]">
+            <a href="" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Home</a>
+            <a href="{% url 'web:cart' %}" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Cart</a>
+            <a href="" class="text-stone-400 font-semibold text-[20px] transition-transform hover:scale-110 duration-300">Contact</a>
+        </div>
+        <div class="w-[10%]">
+            <div class="text-center group">
+                <i class='bx bx-map text-white text-[30px] transition-transform group-hover:rotate-12 duration-300'></i>
+                <h1 class="text-green-500 text-[10px] font-bold group-hover:text-lime-400 transition-colors duration-300">Bookshop Finder</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

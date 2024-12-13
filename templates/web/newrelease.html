@@ -1,0 +1,178 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+<header class="bg-zinc-800 shadow p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-green-500">NEW-RELEASE</h1>
+        <input 
+            type="text" 
+            placeholder="Search products..." 
+            class=" rounded  px-4 py-2 focus:outline-none focus:ring focus:ring-blue-500 bg-green-500"
+        />
+    </div>
+</header>
+<body class="bg-gray-100 h-[100vh]"style="background-image: url(/static/web/images/loginbackground.jpg); background-size: contain;">
+    <section class="container mx-auto p-4">
+        <div class="flex justify-between items-center">
+            <div class="flex space-x-4">
+                <select class="border border-gray-300 rounded px-4 py-2 focus:outline-none">
+                    <option value="" class="text-green-500">Sort by</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="popularity">Popularity</option>
+                    <option value="rating">Rating</option>
+                </select>
+                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-blue-600">Filter</button>
+            </div>
+            <p class="text-gray-600">Showing 1-20 of 100 products</p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="container mx-auto p-4 px-[100px]" >
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for product in products %}
+            {% if product.category.name == "new release" %}
+            <div class="bg-black bg-opacity-55 shadow rounded-2xl overflow-hidden h-[500px]">
+                <div class="h-[63%] w-full  max-w-6xl p-2 mx-auto " >
+                    <img src="{{product.image.url}}" class="h-[310px] w-full rounded-2xl" alt="">
+                </div>
+                <div class="p-4 mt-3">
+                    <h2 class="text-lg font-semibold text-white">{{ product.title }}</h2>
+                    <p class="text-green-600">${{ product.price }}</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                            Add to Cart
+                        </button>
+                        <span class="text-yellow-500">⭐⭐⭐⭐☆</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="container mx-auto p-4 flex justify-center">
+        <div class="flex space-x-2">
+            <button class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Previous</button>
+            <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-blue-600">1</button>
+            <button class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">2</button>
+            <button class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">3</button>
+            <button class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Next</button>
+        </div>
+    </section>
+</body>
+
+<footer class="bg-gradient-to-r bg-zinc-800 text-white py-10 px-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- About Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">About Us</h3>
+        <p class="text-sm text-gray-400">
+          Discover a world of books tailored for every reader. Join us in celebrating the joy of reading!
+        </p>
+      </div>
+  
+      <!-- Links Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">Quick Links</h3>
+        <ul>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Shop
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#"
+              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Newsletter Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-green-600">Stay Updated</h3>
+        <form class="flex flex-col">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400 mb-4 focus:outline-none focus:ring focus:ring-yellow-500"
+          />
+          <button
+            type="submit"
+            class="bg-green-600 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 transition-all duration-300"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center">
+      <!-- Social Media -->
+      <div class="flex space-x-4">
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a 
+          href="#" 
+          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+  
+      <!-- Copyright -->
+      <p class="text-sm text-gray-400">
+        © 2024 Your Books Website. All rights reserved.
+      </p>
+    </div>
+  </footer>
+{% endblock %}
