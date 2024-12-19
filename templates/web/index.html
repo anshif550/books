@@ -18,12 +18,12 @@
         </div>
         <div class="w-[10%]">
             <div class="text-center group">
-                <i class='bx bx-map text-white text-[30px] transition-transform group-hover:rotate-12 duration-300'></i>
-                <h1 class="text-green-500 text-[10px] font-bold group-hover:text-lime-400 transition-colors duration-300">Bookshop Finder</h1>
+                <a href="" class="menu button"><i class='bx bx-menu text-green-500 text-[50px]'></i></a>
             </div>
         </div>
     </div>
 </section>
+
 
 <section class="home h-[84vh] bg-cover bg-top opacity-unset animate-slide-in" 
          style="background-image: url(/static/web/images/bg-3.webp); background-size: contain;">
@@ -32,7 +32,7 @@
             <h1 class="text-[60px] font-bold text-white">
                 Biggest <span class="text-green-500">"bookstore"</span><br> in India
             </h1>
-            <p class="text-[20px] mt-5 font-semibold text-white">
+            <p class="text-[20px] mt-5 font-light text-neutral-400">
                 Whether you're a fan of gripping novels, insightful biographies, <br> thrilling mysteries, or educational resources,<br> we have something for everyone.
             </p>
             <a href="{% url 'web:explore' %}" class="block w-[140px] items-center px-3 py-2 text-center mt-10 font-bold text-white transition-colors duration-300 bg-green-600 rounded-lg hover:bg-lime-600">
@@ -57,47 +57,50 @@
         </p>
     </div>
 </section>
-<section class="h-[80vh] bg-cover" style="background-image: url(/static/web/images/wood2.jpg);">
+<section class="h-[80vh] bg-cover" style="background-image: url(/static/web/images/lastwood.png); background-size: cover;">
     <div>
         <div class="flex justify-between px-20 pt-20">
             <!-- Card 1 -->
-            <div class=" mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
+            <div class="h-[210px] mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
                 <div class="w-[40%] rounded-2xl">
                     <img src="/static/web/images/card1.jpg" class="h-full rounded-l-2xl" alt="">
                 </div>
-                <div class="w-[60%] p-5 bg-zinc-600 opacity-85 rounded-r-2xl">
-                    <h1 class="text-gray-300 text-[30px] font-bold ">Top Rated Books</h1>
-                    <a href="{% url 'web:categories' %}" class="block px-5 py-2 mt-10 font-bold bg-white rounded-sm shadow-2xl w-[120px]">
+                <div class="w-[60%] p-3 bg-zinc-600 opacity-85 rounded-r-2xl">
+                    <h1 class="text-neutral-300 text-[30px] font-bold ">Top Rated Books</h1>
+                    <p class="mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
+                    <a href="{% url 'web:categories' %}" class="block px-1 text-center py-2 mt-[13px]  bg-stone-400 text-black rounded-sm shadow-2xl w-[120px]">
                         Shop now
                     </a> 
                 </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="mb-5 flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
-                <div class="w-[40%] rounded-2xl">
-                    <img src="/static/web/images/card2.jpg" class="h-full rounded-l-2xl" alt="">
-                </div>
-                <div class="w-[60%] p-5 bg-zinc-600 opacity-85 rounded-r-2xl">
-                    <h1 class="text-gray-300 text-[30px] font-bold animate-shake">New <br> Release</h1>
-                    <a href="{% url 'web:newrelease' %}" class="block px-5 py-2 mt-10 font-bold bg-white rounded-sm shadow-2xl w-[120px]">
+            <div class="h-[210px] mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
+              <div class="w-[41%] rounded-2xl">
+                  <img src="/static/web/images/card2.jpg" class="h-full rounded-l-2xl" alt="">
+              </div>
+              <div class="w-[60%] p-3 bg-zinc-600 opacity-85 rounded-r-2xl">
+                  <h1 class="text-neutral-300 text-[30px] font-bold ">New <br> release</h1>
+                  <p class="mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
+                  <a href="{% url 'web:newrelease' %}" class="block px-1 text-center py-2 mt-[13px]  bg-stone-400 text-black rounded-sm shadow-2xl w-[120px]">
                       Shop now
-                    </a> 
-                </div>
-            </div>
+                  </a> 
+              </div>
+          </div>
 
             <!-- Card 3 -->
-            <div class="mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
-                <div class="w-[40%] rounded-2xl">
-                    <img src="/static/web/images/card3.jpg" class="h-full rounded-l-2xl" alt="">
-                </div>
-                <div class="w-[60%] p-5 bg-zinc-600 opacity-85 rounded-r-2xl">
-                    <h1 class="text-gray-300 text-[30px] font-bold">Pre <br> order</h1>
-                    <a href="{% url 'web:preorder' %}" class="block px-5 py-2 mt-10 font-bold bg-white rounded-sm shadow-2xl w-[120px]">
+            <div class="h-[210px] mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
+              <div class="w-[40%] rounded-2xl">
+                  <img src="/static/web/images/card3.jpg" class="h-full rounded-l-2xl" alt="">
+              </div>
+              <div class="w-[60%] p-3 bg-zinc-600 opacity-85 rounded-r-2xl">
+                  <h1 class="text-neutral-300 text-[30px] font-bold ">Pre <br>order</h1>
+                  <p class="mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
+                  <a href="{% url 'web:categories' %}" class="block px-1 text-center py-2 mt-[13px]  bg-stone-400 text-black rounded-sm shadow-2xl w-[120px]">
                       Shop now
-                    </a> 
-                </div>
-            </div>
+                  </a> 
+              </div>
+          </div>
         </div>
 
         <!-- Offer Section -->
@@ -139,15 +142,15 @@
 <section style="background-image: url(/static/web/images/bg-3.webp); background-size: contain;">
   <div class="flex flex-wrap justify-between px-10 mb-10 mt-15 h-fit">
     {% for products in products %}
-    <div class="w-[22%] mt-20 bg-stone-50 bg-opacity-55 rounded-2xl shadow-lg shadow-black">
-        <div class="p-3">
-            <img class="w-full m-auto shadow-sm h-[300px] rounded-2xl" src="{{ products.image.url }}" alt="">
+    <div class="w-[18%] mt-20 bg-stone-50 bg-opacity-55 rounded-2xl shadow-lg shadow-black">
+        <div class="">
+            <img class="w-full m-auto shadow-sm h-[250px] rounded-2xl rounded-b-[30%]" src="{{ products.image.url }}" alt="">
         </div>
         <div class="p-2">
-            <h1 class="text-green-800 text-[20px] font-bold">{{products.title}}</h1>
+            <h1 class="text-green-800 text-[15px] font-bold">{{products.title}}</h1>
             <p></p>               
             <h3><span class="font-bold">Price:{{products.price}}</span></h3>
-            <a href="{% url 'web:singlebook' id=products.id %}" class="block px-3 py-2 mt-3 mb-3 text-center bg-zinc-700 text-green-500 rounded-xl">
+            <a href="{% url 'web:singlebook' id=products.id %}" class="block px-3 py-2 mt-3 mb-3 text-center text-green-500 bg-zinc-700 rounded-xl">
                 shop now
             </a>
         </div>
@@ -156,16 +159,16 @@
 </div>
     </div> 
     <div class="w-full ml-[690px] py-[70px]">
-        <a class="px-10 py-3 font-bold bg-zinc-800 text-green-600   shadow-2xl rounded-[30px]" href="{% url 'web:allproduct' %}">view all</a>
+        <a class="px-10 py-3 font-bold bg-stone-400 text-green-600   shadow-2xl rounded-[30px]" href="{% url 'web:allproduct' %}">view all</a>
     </div>
 </section>
 
 
-<footer class="bg-gradient-to-r bg-zinc-800 text-white py-10 px-10">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+<footer class="px-3 text-white py-7 bg-gradient-to-r bg-zinc-800">
+    <div class="container grid grid-cols-1 gap-6 mx-auto md:grid-cols-3">
       <!-- About Section -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-green-600">About Us</h3>
+        <h3 class="mb-4 text-lg font-semibold text-green-600">About Us</h3>
         <p class="text-sm text-gray-400">
           Discover a world of books tailored for every reader. Join us in celebrating the joy of reading!
         </p>
@@ -173,12 +176,12 @@
   
       <!-- Links Section -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-green-600">Quick Links</h3>
+        <h3 class="mb-4 text-lg font-semibold text-green-600">Quick Links</h3>
         <ul>
           <li>
             <a 
               href="#"
-              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+              class="text-sm text-gray-400 transition-all duration-300 hover:text-yellow-500"
             >
               Home
             </a>
@@ -186,7 +189,7 @@
           <li>
             <a 
               href="#"
-              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+              class="text-sm text-gray-400 transition-all duration-300 hover:text-yellow-500"
             >
               Shop
             </a>
@@ -194,7 +197,7 @@
           <li>
             <a 
               href="#"
-              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+              class="text-sm text-gray-400 transition-all duration-300 hover:text-yellow-500"
             >
               Blog
             </a>
@@ -202,7 +205,7 @@
           <li>
             <a 
               href="#"
-              class="text-sm text-gray-400 hover:text-yellow-500 transition-all duration-300"
+              class="text-sm text-gray-400 transition-all duration-300 hover:text-yellow-500"
             >
               Contact Us
             </a>
@@ -212,16 +215,16 @@
   
       <!-- Newsletter Section -->
       <div>
-        <h3 class="text-lg font-semibold mb-4 text-green-600">Stay Updated</h3>
+        <h3 class="mb-4 text-lg font-semibold text-green-600">Stay Updated</h3>
         <form class="flex flex-col">
           <input
             type="email"
             placeholder="Enter your email"
-            class="px-4 py-2 rounded bg-gray-800 text-white placeholder-gray-400 mb-4 focus:outline-none focus:ring focus:ring-yellow-500"
+            class="px-4 py-2 mb-4 text-white placeholder-gray-400 bg-gray-800 rounded focus:outline-none focus:ring focus:ring-yellow-500"
           />
           <button
             type="submit"
-            class="bg-green-600 text-gray-900 px-4 py-2 rounded hover:bg-yellow-600 transition-all duration-300"
+            class="px-4 py-2 text-gray-900 transition-all duration-300 bg-green-600 rounded hover:bg-yellow-600"
           >
             Subscribe
           </button>
@@ -229,33 +232,33 @@
       </div>
     </div>
   
-    <div class="mt-10 border-t border-gray-700 pt-6 flex justify-between items-center">
+    <div class="flex items-center justify-between pt-6 mt-10 border-t border-gray-700">
       <!-- Social Media -->
       <div class="flex space-x-4">
         <a 
           href="#" 
-          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          class="text-gray-400 transition-all duration-300 hover:text-yellow-500"
           aria-label="Facebook"
         >
           <i class="fab fa-facebook-f"></i>
         </a>
         <a 
           href="#" 
-          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          class="text-gray-400 transition-all duration-300 hover:text-yellow-500"
           aria-label="Twitter"
         >
           <i class="fab fa-twitter"></i>
         </a>
         <a 
           href="#" 
-          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          class="text-gray-400 transition-all duration-300 hover:text-yellow-500"
           aria-label="Instagram"
         >
           <i class="fab fa-instagram"></i>
         </a>
         <a 
           href="#" 
-          class="text-gray-400 hover:text-yellow-500 transition-all duration-300"
+          class="text-gray-400 transition-all duration-300 hover:text-yellow-500"
           aria-label="LinkedIn"
         >
           <i class="fab fa-linkedin-in"></i>
@@ -269,9 +272,10 @@
     </div>
   </footer>
   
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-{% endblock %}
+
 
 <script>
     module.exports = {
@@ -296,4 +300,36 @@
   plugins: [],
 };
 
+var menuButton = document.querySelector('.menu-button');
+    var openMenu = function () {
+      swiper.slidePrev();
+    };
+    var swiper = new Swiper('.swiper', {
+      slidesPerView: 'auto',
+      initialSlide: 1,
+      resistanceRatio: 0,
+      slideToClickedSlide: true,
+      on: {
+        slideChangeTransitionStart: function () {
+          var slider = this;
+          if (slider.activeIndex === 0) {
+            menuButton.classList.add('cross');
+            // required because of slideToClickedSlide
+            menuButton.removeEventListener('click', openMenu, true);
+          } else {
+            menuButton.classList.remove('cross');
+          }
+        },
+        slideChangeTransitionEnd: function () {
+          var slider = this;
+          if (slider.activeIndex === 1) {
+            menuButton.addEventListener('click', openMenu, true);
+          }
+        },
+      },
+    });
+
+
 </script>
+
+{% endblock %}

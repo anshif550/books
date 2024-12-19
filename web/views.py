@@ -14,7 +14,7 @@ def index(request):
     categories = Category.objects.all()
     authors = Author.objects.all()
     books = Book.objects.all()
-    products = Product.objects.all()[:4]
+    products = Product.objects.all()[:5]
 
     context = {
         'author': authors,
