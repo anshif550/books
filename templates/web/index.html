@@ -5,50 +5,70 @@
 {% block container %}
 
 <section class="shadow-2xl shadow-black main bg-gradient-to-r bg-zinc-800 animate-slide-in h-[122px]">
-    <div class="flex items-center justify-between py-2 pr-4">
-        <div class="flex items-center w-[30%]">
-            <img class="w-[150px] opacity-75 rounded-r-[40px] transition-transform duration-500 hover:scale-110" 
-                 src="/static/web/images/Screenshot 2024-12-05 120336.png" alt="">
-            <h1 class="ml-3 text-[50px] font-serif text-green-500 opacity-85 hover:text-lime-400 transition-colors duration-300">EBOOKS</h1>
-        </div>
-        <div class="w-[30%]">
-            <a href="" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Home</a>
-            <a href="{% url 'web:cart' %}" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Cart</a>
-            <a href="{% url 'web:contact' %}" class="text-stone-400 font-semibold text-[20px] transition-transform hover:scale-110 duration-300">Contact</a>
-        </div>
-        <div class="w-[10%]">
-            <div class="text-center group">
-                <a href="" class="menu button"><i class='bx bx-menu text-green-500 text-[50px]'></i></a>
-            </div>
-        </div>
-    </div>
+  <div class="flex items-center justify-between py-2 pr-4">
+      <div class="flex items-center w-[30%]">
+          <img class="w-[150px] opacity-75 rounded-r-[40px] transition-transform duration-500 hover:scale-110" 
+               src="/static/web/images/Screenshot 2024-12-05 120336.png" alt="">
+          <h1 class="ml-3 text-[50px] font-serif text-green-500 opacity-85 hover:text-lime-400 transition-colors duration-300">EBOOKS</h1>
+      </div>
+      <div class="w-[30%]">
+          <a href="" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Home</a>
+          <a href="{% url 'web:cart' %}" class="text-stone-400 font-semibold text-[20px] mr-10 transition-transform hover:scale-110 duration-300">Cart</a>
+          <a href="{% url 'web:contact' %}" class="text-stone-400 font-semibold text-[20px] transition-transform hover:scale-110 duration-300">Contact</a>
+      </div>
+      <div class="w-[10%] relative">
+          <div class="text-center group">
+              <button id="hamburger-btn" class=""><i class='bx bx-menu text-green-500 text-[50px]'></i></button>
+              <!-- Dropdown Menu -->
+              <ul id="dropdown-menu" class="hidden absolute right-0  w-48 bg-zinc-800 text-white rounded shadow-lg z-50 mt-[50px]">
+                  <li class="px-4 py-2 hover:bg-zinc-700"><a href="">My Orders</a></li>
+                  <li class="px-4 py-2 hover:bg-zinc-700"><a href="">Contacts</a></li>
+                  <li class="px-4 py-2 hover:bg-zinc-700"><a href="">About</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
 </section>
+<script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const dropdownMenu = document.getElementById('dropdown-menu');
 
+  hamburgerBtn.addEventListener('click', () => {
+      // Toggle the dropdown menu
+      dropdownMenu.classList.toggle('hidden');
+  });
+</script>
 
-<section class="home h-[84vh] bg-cover bg-top opacity-unset animate-slide-in" 
-         style="background-image: url(/static/web/images/bg-3.webp); background-size: contain;">
-    <div class="flex px-20">
-        <div class="w-[50%] pt-20 bg-black p-10 mt-10 rounded-2xl bg-opacity-40 shadow-2xl">
-            <h1 class="text-[60px] font-bold text-white">
-                Biggest <span class="text-green-500">"bookstore"</span><br> in India
-            </h1>
-            <p class="text-[20px] mt-5 font-light text-neutral-400">
-                Whether you're a fan of gripping novels, insightful biographies, <br> thrilling mysteries, or educational resources,<br> we have something for everyone.
-            </p>
-            <a href="{% url 'web:explore' %}" class="block w-[140px] items-center px-3 py-2 text-center mt-10 font-bold text-white transition-colors duration-300 bg-green-600 rounded-lg hover:bg-lime-600">
-                Explore <i class='font-bold text-white bx bx-right-arrow-alt'></i>
-            </a>
-        </div>
-        <div class="relative w-[50%] flex pt-20 h-[75vh] ml-5">
-            <img class="w-[200px] h-[300px] rounded-xl shadow-2xl shadow-black absolute bottom-2 transition-transform duration-500 hover:scale-110 hover:rotate-6" 
-                 src="/static/web/images/solve-murder-678x1024.jpg" alt="">
-            <img class="w-[300px] h-[400px] rounded-xl shadow-2xl shadow-black absolute top-15 left-[160px] z-50 transition-transform duration-500 hover:scale-110 hover:rotate-6" 
-                 src="/static/web/images/300cd9b7f3e9ecbc726ffd4af5b34d16.jpg" alt="">
-            <img class="w-[250px] h-[300px] rounded-xl shadow-2xl shadow-black absolute right-[30px] top-10 transition-transform duration-500 hover:scale-110 hover:rotate-6" 
-                 src="/static/web/images/72178b85-1469-4463-b65c-1456f86807bf_1.8ff6cf02d7702a66e473452a304241c7.webp" alt="">
-        </div>
-    </div>
-</section>
+      
+<div class="home h-[84vh] bg-cover bg-top opacity-unset animate-slide-in" 
+style="background-image: url(/static/web/images/bg-3.webp); background-size: contain;">
+<div class="flex px-20">
+<div class="w-[50%] pt-20 bg-black p-10 mt-10 rounded-2xl bg-opacity-40 shadow-2xl">
+   <h1 class="text-[60px] font-bold text-white">
+       Biggest <span class="text-green-500">"bookstore"</span><br> in India
+   </h1>
+   <p class="text-[20px] mt-5 font-light text-neutral-400">
+       Whether you're a fan of gripping novels, insightful biographies, <br> thrilling mysteries, or educational resources,<br> we have something for everyone.
+   </p>
+   <a href="{% url 'web:explore' %}" class="block w-[140px] items-center px-3 py-2 text-center mt-10 font-bold text-white transition-colors duration-300 bg-green-600 rounded-lg hover:bg-lime-600">
+       Explore <i class='font-bold text-white bx bx-right-arrow-alt'></i>
+   </a>
+</div>
+<div class="relative w-[50%] flex pt-20 h-[75vh] ml-5">
+   <img class="w-[200px] h-[300px] rounded-xl shadow-2xl shadow-black absolute bottom-2 transition-transform duration-500 hover:scale-110 hover:rotate-6 z-20" 
+        src="/static/web/images/solve-murder-678x1024.jpg" alt="">
+   <img class="w-[300px] h-[400px] rounded-xl shadow-2xl shadow-black absolute top-15 left-[160px] z-50 transition-transform duration-500 hover:scale-110 hover:rotate-6 z-20" 
+        src="/static/web/images/300cd9b7f3e9ecbc726ffd4af5b34d16.jpg" alt="">
+   <img class="w-[250px] h-[300px] rounded-xl shadow-2xl shadow-black absolute right-[30px] top-10 transition-transform duration-500 hover:scale-110 hover:rotate-6 z-20" 
+        src="/static/web/images/72178b85-1469-4463-b65c-1456f86807bf_1.8ff6cf02d7702a66e473452a304241c7.webp" alt="">
+</div>
+</div>
+</div>
+</div>     
+</div>
+</div>
+ 
+
 <section class="py-4 shadow-lg shadow-black bg-gradient-to-r bg-zinc-800">
     <div class="">
         <h1 class="text-center text-[50px] text-green-500 opacity-80 font-bold">Read and Grow..,</h1>
@@ -60,7 +80,7 @@
 <section class="h-[80vh] bg-cover" style="background-image: url(/static/web/images/lastwood.png); background-size: cover;">
     <div>
         <div class="flex justify-between px-20 pt-20">
-            <!-- Card 1 -->
+
             <div class="h-[210px] mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
                 <div class="w-[40%] rounded-2xl">
                     <img src="/static/web/images/card1.jpg" class="h-full rounded-l-2xl" alt="">
@@ -68,13 +88,13 @@
                 <div class="w-[60%] p-3 bg-zinc-600 opacity-85 rounded-r-2xl">
                     <h1 class="text-neutral-300 text-[30px] font-bold ">Top Rated Books</h1>
                     <p class="mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
-                    <a href="{% url 'web:categories' %}" class="block px-1 text-center py-2 mt-[13px]  bg-stone-400 text-black rounded-sm shadow-2xl w-[120px]">
+                    <a href="{% url 'web:categories' %}" class="block px-1 text-center py-2 mt-[3px]  bg-stone-400 text-black rounded-sm shadow-2xl w-[120px]">
                         Shop now
                     </a> 
                 </div>
             </div>
 
-            <!-- Card 2 -->
+
             <div class="h-[210px] mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
               <div class="w-[41%] rounded-2xl">
                   <img src="/static/web/images/card2.jpg" class="h-full rounded-l-2xl" alt="">
@@ -82,13 +102,13 @@
               <div class="w-[60%] p-3 bg-zinc-600 opacity-85 rounded-r-2xl">
                   <h1 class="text-neutral-300 text-[30px] font-bold ">New <br> release</h1>
                   <p class="mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
-                  <a href="{% url 'web:newrelease' %}" class="block px-1 text-center py-2 mt-[13px]  bg-stone-400 text-black rounded-sm shadow-2xl w-[120px]">
+                  <a href="{% url 'web:newrelease' %}" class="block px-1 text-center py-2 mt-[3px]  bg-stone-400 text-black rounded-sm shadow-2xl w-[120px]">
                       Shop now
                   </a> 
               </div>
           </div>
 
-            <!-- Card 3 -->
+
             <div class="h-[210px] mb-5 animate-shake flex w-[30%] rounded-2xl shadow-2xl shadow-black transition-all duration-300 hover:animate-shake hover:shadow-[0px_10px_30px_rgba(0,0,0,0.5)]">
               <div class="w-[40%] rounded-2xl">
                   <img src="/static/web/images/card3.jpg" class="h-full rounded-l-2xl" alt="">
@@ -96,14 +116,13 @@
               <div class="w-[60%] p-3 bg-zinc-600 opacity-85 rounded-r-2xl">
                   <h1 class="text-neutral-300 text-[30px] font-bold ">Pre <br>order</h1>
                   <p class="mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit</p>
-                  <a href="{% url 'web:categories' %}" class="block px-1 text-center py-2 mt-[13px]  bg-stone-400 text-black rounded-sm shadow-2xl w-[120px]">
+                  <a href="{% url 'web:categories' %}" class="block px-1 text-center py-2 mt-[3px]  bg-stone-400 text-black rounded-sm shadow-2xl w-[120px]">
                       Shop now
                   </a> 
               </div>
           </div>
         </div>
 
-        <!-- Offer Section -->
         <div class="w-[89%] mt-20 h-[150px] wrap rounded-2xl shadow-inner shadow-black m-auto p-4 text-center bg-cover" style="background-image: url(/static/web/images/offerbg.jpg); opacity: 90%;">
             <h1 class="text-white animate-shake text-[30px] m-auto rounded-2xl bg-opacity-35 pb-3">More bang for your book</h1>
             <a href="{% url 'web:ofered' %}" class=" text-yellow-300  bg-opacity-35 text-[40px] bg-black px-[300px] py-2">20% off select books Click now</a>
@@ -112,7 +131,7 @@
 </section>
 
 <style>
-    /* Custom Tailwind-like Animation for Shaking Effect */
+
     @keyframes shake {
         0% {
             transform: translateX(-3px);
@@ -125,7 +144,7 @@
         }
     }
 
-    /* Adding Tailwind-style class for animation */
+
     .animate-shake {
         animation: shake 0.6s ease-in-out infinite;
     }
@@ -166,16 +185,13 @@
 
 <footer class="px-3 text-white py-7 bg-gradient-to-r bg-zinc-800">
     <div class="container grid grid-cols-1 gap-6 mx-auto md:grid-cols-3">
-      <!-- About Section -->
       <div>
         <h3 class="mb-4 text-lg font-semibold text-green-600">About Us</h3>
         <p class="text-sm text-gray-400">
           Discover a world of books tailored for every reader. Join us in celebrating the joy of reading!
         </p>
       </div>
-  
-      <!-- Links Section -->
-      <div>
+        <div>
         <h3 class="mb-4 text-lg font-semibold text-green-600">Quick Links</h3>
         <ul>
           <li>
@@ -212,9 +228,7 @@
           </li>
         </ul>
       </div>
-  
-      <!-- Newsletter Section -->
-      <div>
+        <div>
         <h3 class="mb-4 text-lg font-semibold text-green-600">Stay Updated</h3>
         <form class="flex flex-col">
           <input
@@ -233,7 +247,7 @@
     </div>
   
     <div class="flex items-center justify-between pt-6 mt-10 border-t border-gray-700">
-      <!-- Social Media -->
+
       <div class="flex space-x-4">
         <a 
           href="#" 
@@ -265,7 +279,6 @@
         </a>
       </div>
   
-      <!-- Copyright -->
       <p class="text-sm text-gray-400">
         © 2024 Your Books Website. All rights reserved.
       </p>
@@ -273,7 +286,6 @@
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 
 
 
@@ -299,37 +311,207 @@
   },
   plugins: [],
 };
+</script>
 
-var menuButton = document.querySelector('.menu-button');
-    var openMenu = function () {
-      swiper.slidePrev();
-    };
-    var swiper = new Swiper('.swiper', {
-      slidesPerView: 'auto',
-      initialSlide: 1,
-      resistanceRatio: 0,
-      slideToClickedSlide: true,
-      on: {
-        slideChangeTransitionStart: function () {
-          var slider = this;
-          if (slider.activeIndex === 0) {
-            menuButton.classList.add('cross');
-            // required because of slideToClickedSlide
-            menuButton.removeEventListener('click', openMenu, true);
-          } else {
-            menuButton.classList.remove('cross');
-          }
-        },
-        slideChangeTransitionEnd: function () {
-          var slider = this;
-          if (slider.activeIndex === 1) {
-            menuButton.addEventListener('click', openMenu, true);
-          }
-        },
-      },
+ <script>
+    const menuButton = document.getElementById("menu-button");
+    const slideMenu = document.getElementById("slide-menu");
+    const closeMenu = document.getElementById("close-menu");
+
+    // Open menu
+    menuButton.addEventListener("click", () => {
+      slideMenu.classList.add("active");
     });
 
+    // Close menu
+    closeMenu.addEventListener("click", () => {
+      slideMenu.classList.remove("active");
+    });
+  </script>
 
-</script>
+<style>
+     html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu {
+      min-width: 100px;
+      width: 70%;
+      max-width: 320px;
+
+      background-color: #2c8dfb;
+      color: #fff;
+    }
+
+    .content {
+      width: 100%;
+    }
+
+    .menu-button {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      padding: 15px;
+
+      cursor: pointer;
+
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+
+      background-color: #2c8dfb;
+
+      /*margin: 14px;
+			border-radius: 5px;*/
+    }
+
+    .menu-button .bar:nth-of-type(1) {
+      margin-top: 0px;
+    }
+
+    .menu-button .bar:nth-of-type(3) {
+      margin-bottom: 0px;
+    }
+
+    .bar {
+      position: relative;
+      display: block;
+
+      width: 50px;
+      height: 5px;
+
+      margin: 10px auto;
+      background-color: #fff;
+
+      border-radius: 10px;
+
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+    }
+
+    .menu-button:hover .bar:nth-of-type(1) {
+      -webkit-transform: translateY(1.5px) rotate(-4.5deg);
+      -ms-transform: translateY(1.5px) rotate(-4.5deg);
+      transform: translateY(1.5px) rotate(-4.5deg);
+    }
+
+    .menu-button:hover .bar:nth-of-type(2) {
+      opacity: 0.9;
+    }
+
+    .menu-button:hover .bar:nth-of-type(3) {
+      -webkit-transform: translateY(-1.5px) rotate(4.5deg);
+      -ms-transform: translateY(-1.5px) rotate(4.5deg);
+      transform: translateY(-1.5px) rotate(4.5deg);
+    }
+
+    .cross .bar:nth-of-type(1) {
+      -webkit-transform: translateY(15px) rotate(-45deg);
+      -ms-transform: translateY(15px) rotate(-45deg);
+      transform: translateY(15px) rotate(-45deg);
+    }
+
+    .cross .bar:nth-of-type(2) {
+      opacity: 0;
+    }
+
+    .cross .bar:nth-of-type(3) {
+      -webkit-transform: translateY(-15px) rotate(45deg);
+      -ms-transform: translateY(-15px) rotate(45deg);
+      transform: translateY(-15px) rotate(45deg);
+    }
+
+    .cross:hover .bar:nth-of-type(1) {
+      -webkit-transform: translateY(13.5px) rotate(-40.5deg);
+      -ms-transform: translateY(13.5px) rotate(-40.5deg);
+      transform: translateY(13.5px) rotate(-40.5deg);
+    }
+
+    .cross:hover .bar:nth-of-type(2) {
+      opacity: 0.1;
+    }
+
+    .cross:hover .bar:nth-of-type(3) {
+      -webkit-transform: translateY(-13.5px) rotate(40.5deg);
+      -ms-transform: translateY(-13.5px) rotate(40.5deg);
+      transform: translateY(-13.5px) rotate(40.5deg);
+    }
+
+
+    .menu-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .menu-button .bar {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.3s;
+    }
+
+    .swiper {
+      position: absolute;
+      top: 0;
+      left: -100%; /* Initially hidden */
+      width: 100%;
+      height: 100vh;
+      z-index: 999;
+      transition: left 0.5s ease-in-out;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .swiper.active {
+      left: 0; /* Slide in */
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+</style>
 
 {% endblock %}

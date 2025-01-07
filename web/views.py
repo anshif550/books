@@ -323,3 +323,8 @@ def explore(request):
 
 
     return render(request, "web/explore.html")
+
+@login_required
+def my_orders(request):
+    orders = MyOrder.objects.filter(user=request.user).order_by('-order_date')
+    return render(request, 'web/my_orders.html', {'orders': orders})
