@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block container %}
+<section class="min-h-screen py-8 text-white bg-zinc-900">
+    <div class="container px-4 mx-auto">
+        <h1 class="mb-6 text-4xl font-bold text-green-500">Order #{{ order.id }}</h1>
+        <p class="mb-4"><strong>Name:</strong> {{ order.name }}</p>
+        <p class="mb-4"><strong>Email:</strong> {{ order.email }}</p>
+        <p class="mb-4"><strong>Address:</strong> {{ order.address }}</p>
+        <p class="mb-4"><strong>Total Price:</strong> ₹{{ order.total_price }}</p>
+        <p class="mb-4"><strong>Payment Method:</strong> {{ order.payment_method }}</p>
+        <p class="mb-4"><strong>Status:</strong> {{ order.status }}</p>
+        <p class="mb-4"><strong>Order Date:</strong> {{ order.created_at|date:"d M Y, H:i" }}</p>
+    </div>
+</section>
+{% endblock %}

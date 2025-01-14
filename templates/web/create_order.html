@@ -1,0 +1,12 @@
+{% block content %}
+<section class="min-h-screen py-8 text-white bg-zinc-900">
+    <div class="container px-4 mx-auto">
+        <h1 class="mb-6 text-4xl font-bold text-green-500">Create Order</h1>
+        <form method="post" class="p-6 rounded-lg shadow-lg bg-zinc-800">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700">Place Order</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

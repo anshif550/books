@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login as auth_login, logout as aut
 from django.http import HttpResponseRedirect
 from users.models import User
 from customer.models import*
+from django.http import JsonResponse
 
 
 @login_required(login_url='/login/')
@@ -324,7 +325,47 @@ def explore(request):
 
     return render(request, "web/explore.html")
 
+
 @login_required
 def my_orders(request):
-    orders = MyOrder.objects.filter(user=request.user).order_by('-order_date')
-    return render(request, 'web/my_orders.html', {'orders': orders})
+    """
+    View to display all orders for the logged-in user.
+    """
+    orders = Order.objects.filter(customer__user=request.user).order_by('-created_at')
+    context = {
+        'orders': orders,
+    }
+    return render(request, 'web/my_orders.html', context)
+
+@login_required
+def order_detail(request, order_id):
+    """
+    View to display details of a specific order.
+    """
+    order = get_object_or_404(Order, id=order_id, customer__user=request.user)
+    context = {
+        'order': order
+    }
+    return render(request, 'web/order_detail.html', context)
+
+@login_required
+def create_order(request):
+    """
+    View to create a new order.
+    """
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
+            order.customer = request.user.customer  # Assuming a `Customer` model with a OneToOneField to User
+            order.save()
+            return HttpResponseRedirect(reverse('order_detail', args=[order.id]))
+    else:
+        form = OrderForm()
+    
+    context = {
+        'form': form
+    }
+    return render(request, 'web/create_order.html', context)
+
+

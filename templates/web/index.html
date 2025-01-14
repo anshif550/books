@@ -21,7 +21,7 @@
               <button id="hamburger-btn" class=""><i class='bx bx-menu text-green-500 text-[50px]'></i></button>
               <!-- Dropdown Menu -->
               <ul id="dropdown-menu" class="hidden absolute right-0  w-48 bg-zinc-800 text-white rounded shadow-lg z-50 mt-[50px]">
-                  <li class="px-4 py-2 hover:bg-zinc-700"><a href="">My Orders</a></li>
+                  <li class="px-4 py-2 hover:bg-zinc-700"><a href="{% url 'web:my_orders' %}">My Orders</a></li>
                   <li class="px-4 py-2 hover:bg-zinc-700"><a href="">Contacts</a></li>
                   <li class="px-4 py-2 hover:bg-zinc-700"><a href="">About</a></li>
               </ul>
@@ -247,7 +247,6 @@ style="background-image: url(/static/web/images/bg-3.webp); background-size: con
     </div>
   
     <div class="flex items-center justify-between pt-6 mt-10 border-t border-gray-700">
-
       <div class="flex space-x-4">
         <a 
           href="#" 
